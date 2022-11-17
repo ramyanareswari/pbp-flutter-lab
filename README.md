@@ -47,7 +47,7 @@ Const tidak dapat diterapkan pada deklarasi sebuah variabel jika valuenya tidak 
 onSaved, onHover, onPressed, dan onTap.
 
 ### Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
-Halaman dikenal dengan istilah `routes` pada Flutter. 
+Halaman dikenal dengan istilah `routes` pada Flutter. Ketika berpindah page/routes, navigasi akan menjadi tumpukan (stack). Jadi ketika berpindah ke screen lain (push), maka screen pertama akan ditumpuk oleh screen kedua. Kemudian apabila kembali dari screen kedua ke pertama, maka screen kedua akan dihapus (pop)
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 1. Membuat page untuk form pada `tambah.dart`. Form berisi input yang menerima judul budget (string), nominal budget (int), jenisBudget (string) dengan pilihan pemasukan atau pengeluaran, dan tanggal dalma bentuk date picker.
