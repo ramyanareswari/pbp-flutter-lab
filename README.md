@@ -35,12 +35,12 @@ Const tidak dapat diterapkan pada deklarasi sebuah variabel jika valuenya tidak 
 `Navigator.push` berfungsi untuk melakukan push sebuah routing (halaman) ke top of stack navigation. `Navigator.pushReplacement` berfungsi untuk mereplace route yang sedang ditampilkan.
 
 ### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
-1. Drawer = membuat menu pada sisi kiri aplikasi sebagainavigasi.
+1. Drawer = membuat menu pada sisi kiri aplikasi sebagainavigasi
 2. ListViewBuilder = menampilkan data dari form (dengan kata lain menampilkan widget children)
-3. ListTile = Widget ini merupakan widget yang dapat menampilkan 1-3 baris teks dalam sebuah list.
+3. ListTile = menampilkan pilihan pada drawer
 4. TextFormField = menerima input teks
-5. Icon = widget untuk menampilkan ikon.
-6. DropdownButton = menampilkan pilihan input.
+5. Icon = widget untuk menampilkan ikon
+6. DropdownButton = menampilkan pilihan input
 
 
 ###  Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed)
