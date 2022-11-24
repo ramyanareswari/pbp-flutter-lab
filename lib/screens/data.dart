@@ -1,4 +1,6 @@
 import 'package:counter_7/main.dart';
+import 'package:counter_7/drawer.dart';
+
 import 'package:counter_7/screens/tambah.dart';
 import 'package:flutter/material.dart';
 
@@ -16,43 +18,7 @@ class _MyDataPageState extends State<BudgetDataPage> {
       appBar: AppBar(
         title: const Text('Data Budget'),
       ), // Menambahkan drawer menu
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('counter_7'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Tambah Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FormPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Data Budget'),
-              onTap: () {
-                // Route menu ke halaman data
-                Navigator.pop(
-                  context,
-                  MaterialPageRoute(builder: (context) => const BudgetDataPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const AppDrawer(),
 
       body: Card(
         child: ListView.builder(

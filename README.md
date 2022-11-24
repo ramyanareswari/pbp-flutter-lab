@@ -98,10 +98,22 @@ drawer: Drawer(
 # Tugas 9: Integrasi Web Service pada Flutter
 
 ### Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Bisa, tetapi lebih baik menggunakan model. Jika tidak membuat model terlebih dahulu, ada beberapa kekurangan yaitu proses pengambilan data lebih rumit, eror lebih sulit dideteksi (jika memakai model, semua data akan divalidasi), dan sulit untuk menetapkan struktur dari data yang diambil.
 
 ### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+| Widget | Fungsi | 
+| :------------ |:--------------- |
+| `Drawer`    | membuat menu pada sisi kiri aplikasi sebagainavigasi |
+| `Icon`    | menampilkan ikon |
+| `Padding`    | mengatur jarak antar child |
+| `SizedBox` | membuat jarak antar widget |
+| `ListTile` | menampilkan pilihan pada drawer dalam bentuk list |
+| `Text` | menampilkan text |
+| `Scaffold` | membuat layout pada aplikasi |
 
 ### Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+Dengan memanfaatkan HTTP package pada flutter, HTTP akan fetch data dari API endpoint yang sudah dibuat. Lalu, terdapat function pada library `dart:convert`, yaitu `json.decode()` untuk build objek Dart dari data JSON dan `json.encode()` untuk serialize objek Dart menjadi string JSON. Selanjutnya, untuk melakukan request HTTP GET, URI dari resource harus diimplement pada code. Setelah HTTP request berhasil dihandle dan data berhasil difetch, `json.decode`
+
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 1. <b>Pendefinisian model</b></br>
