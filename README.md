@@ -104,16 +104,16 @@ drawer: Drawer(
 ### Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
-1. <b>Pendefinisian model</b>
+1. <b>Pendefinisian model</b></br>
 Mendefinisikan model yang digunakan ketika melakukan pemanggilan web service. Caranya menambahkan class bernama `MyWatchList` pada `..\lib/model/watchlistmodel.dart`. `MyWatchList` adalah suatu model yang merepresentasikan response dari pemanggilan web service.
 
-2. <b>Menambah dependensi HTTP</b>
+2. <b>Menambah dependensi HTTP</b></br>
 Menambahkan dependensi HTTP dengan cd ke aplikasi lalu melakukan perintah `flutter pub add http`, lalu menambahkan snippet code `<uses-permission android:name="android.permission.INTERNET" />` pada `android/app/src/main/AndroidManifest.xml`
 
-3. <b>Mengambil dan mengolah data dari web service</b>
+3. <b>Mengambil dan mengolah data dari web service</b></br>
 Pertama, tambahkan impor yang dibutuhkan pada `..\lib\services\fetchwatchlist.dart`, lalu masukkan potongan code yang ditambahkan untuk fetch data dari endpoint JSON di Django yang telah dideploy
 
-4. <b>Menambahkan tombol navigasi ke arah page `My Watch List` pada drawer</b>
+4. <b>Menambahkan tombol navigasi ke arah page `My Watch List` pada drawer</b></br>
 Tambahkan code sebagai berikut pada `drawer.dart`
 ```dart
 ListTile(
@@ -128,7 +128,7 @@ ListTile(
   ),
 ```
 
-5. <b>Menambahkan halaman detail untuk My Watch List</b>
+5. <b>Menambahkan halaman detail untuk My Watch List</b></br>
 Pada `..\lib\screens\mywatchlist_detail.dart`, tambahkan tombol untuk back sebagai berikut:
 ```dart
 CircleAvatar(
