@@ -160,3 +160,10 @@ Selanjutnya, tambahkan code untuk menampilkan data.
 
 6. <b>Menambahkan halaman berisi data watchlist</b>
 Pada `..\lib\screens\mywatchlist.dart`, tambah code untuk menampilkan judul watchlist di setiap card
+
+TODO: 
+[x] pbp_django_auth
+[ ] import 'package:pbp_django_auth/pbp_django_auth.dart'; -> DITAROH WHERE??
+https://pub.dev/packages/pbp_django_auth/install
+[x] Django's part udah di TUGAS-2-PBP bener gasih
+[ ] https://pub.dev/packages/pbp_django_auth -> BELOM BAGIAN FLUTTER PART
