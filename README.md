@@ -2,6 +2,8 @@
 
 ## Ramya Nareswari W. (2106751606)
 
+
+
 ### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 
 Stateless Widget adalah sebagai Widget yang tidak dapat dirubah. Contohnya adalah navigasi karena konten navigasi tidak ada perubahan secara berkala<br/><br/>
@@ -92,3 +94,57 @@ drawer: Drawer(
         ),
       ),
 ```
+
+# Tugas 9: Integrasi Web Service pada Flutter
+
+### Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+
+### Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. <b>Pendefinisian model</b>
+Mendefinisikan model yang digunakan ketika melakukan pemanggilan web service. Caranya menambahkan class bernama `MyWatchList` pada `..\lib/model/watchlistmodel.dart`. `MyWatchList` adalah suatu model yang merepresentasikan response dari pemanggilan web service.
+
+2. <b>Menambah dependensi HTTP</b>
+Menambahkan dependensi HTTP dengan cd ke aplikasi lalu melakukan perintah `flutter pub add http`, lalu menambahkan snippet code `<uses-permission android:name="android.permission.INTERNET" />` pada `android/app/src/main/AndroidManifest.xml`
+
+3. <b>Mengambil dan mengolah data dari web service</b>
+Pertama, tambahkan impor yang dibutuhkan pada `..\lib\services\fetchwatchlist.dart`, lalu masukkan potongan code yang ditambahkan untuk fetch data dari endpoint JSON di Django yang telah dideploy
+
+4. <b>Menambahkan tombol navigasi ke arah page `My Watch List` pada drawer</b>
+Tambahkan code sebagai berikut pada `drawer.dart`
+```dart
+ListTile(
+    title: const Text('My Watch List'),
+    onTap: () {
+      // Route menu ke halaman data
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const WatchListPage()),
+      );
+    },
+  ),
+```
+
+5. <b>Menambahkan halaman detail untuk My Watch List</b>
+Pada `..\lib\screens\mywatchlist_detail.dart`, tambahkan tombol untuk back sebagai berikut:
+```dart
+CircleAvatar(
+    backgroundColor: Colors.grey,
+    child: IconButton(
+      icon: const Icon(
+        Icons.arrow_back,
+        color: Colors.white,
+      ),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    ),
+  ),
+```
+Selanjutnya, tambahkan code untuk menampilkan data.
+
+6. <b>Menambahkan halaman berisi data watchlist</b>
+Pada `..\lib\screens\mywatchlist.dart`, tambah code untuk menampilkan judul watchlist di setiap card
